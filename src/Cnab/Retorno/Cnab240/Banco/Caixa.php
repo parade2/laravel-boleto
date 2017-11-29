@@ -453,7 +453,7 @@ class Caixa extends AbstractRetorno implements RetornoCnab240
                     array_get($this->baixa_liquidacao, $msgAdicional[1], ''),
                     array_get($this->baixa_liquidacao, $msgAdicional[2], ''),
                     array_get($this->baixa_liquidacao, $msgAdicional[3], ''),
-                    array_get($this->baixa_liquidacao, $msgAdicional[4], '')
+                    array_get($this->baixa_liquidacao, isset($msgAdicional[4]) ? $msgAdicional[4] : '', '')
                 );
                 $d->setOcorrenciaDescricao($ocorrencia);
                 $d->setOcorrenciaTipo($d::OCORRENCIA_LIQUIDADA);
@@ -471,7 +471,7 @@ class Caixa extends AbstractRetorno implements RetornoCnab240
                     array_get($this->baixa_liquidacao, $msgAdicional[1], ''),
                     array_get($this->baixa_liquidacao, $msgAdicional[2], ''),
                     array_get($this->baixa_liquidacao, $msgAdicional[3], ''),
-                    array_get($this->baixa_liquidacao, $msgAdicional[4], '')
+                    array_get($this->baixa_liquidacao, isset($msgAdicional[4]) ? $msgAdicional[4] : '', '')
                 );
                 $d->setOcorrenciaDescricao($ocorrencia);
                 $d->setOcorrenciaTipo($d::OCORRENCIA_BAIXADA);
@@ -488,7 +488,7 @@ class Caixa extends AbstractRetorno implements RetornoCnab240
                     array_get($this->rejeicoes, $msgAdicional[1], ''),
                     array_get($this->rejeicoes, $msgAdicional[2], ''),
                     array_get($this->rejeicoes, $msgAdicional[3], ''),
-                    array_get($this->rejeicoes, $msgAdicional[4], '')
+                    array_get($this->rejeicoes, isset($msgAdicional[4]) ? $msgAdicional[4] : '', '')
                 );
                 $d->setError($error);
             } else {
